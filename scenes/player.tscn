@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://cil03ohrmiway"]
+[gd_scene load_steps=57 format=3 uid="uid://cil03ohrmiway"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_p23rk"]
 [ext_resource type="Texture2D" uid="uid://cwl4euhqepiyk" path="res://art/character/player.png" id="2_6xyp5"]
@@ -414,17 +414,63 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_82ynh"]
-radius = 5.09902
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_28483"]
+radius = 12.0
 
 [node name="player" type="CharacterBody2D"]
 y_sort_enabled = true
+position = Vector2(1, 1)
+collision_layer = 3
 script = ExtResource("1_p23rk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2qigo")
 animation = &"front_idle"
-offset = Vector2(0, 15)
+offset = Vector2(0, -15)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 29)
+position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_82ynh")
+
+[node name="player_hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox"]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_28483")
+
+[node name="attack_cooldown" type="Timer" parent="."]
+
+[node name="deal_attack_timer" type="Timer" parent="."]
+
+[node name="Startscene_camera" type="Camera2D" parent="."]
+position = Vector2(130, 131)
+zoom = Vector2(4, 4)
+limit_left = 17
+limit_top = 44
+limit_right = 248
+limit_bottom = 218
+limit_smoothed = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+editor_draw_limits = true
+
+[node name="secondscene_camera" type="Camera2D" parent="."]
+position = Vector2(43, 38)
+zoom = Vector2(4, 4)
+limit_left = 1
+limit_top = 2
+limit_right = 606
+limit_bottom = 194
+limit_smoothed = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+editor_draw_limits = true
+
+[connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
+[connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]
+[connection signal="timeout" from="attack_cooldown" to="." method="_on_attack_cooldown_timeout"]
+[connection signal="timeout" from="deal_attack_timer" to="." method="_on_deal_attack_timer_timeout"]
