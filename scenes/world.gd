@@ -12,7 +12,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	change_scene()
+	change_scene_in_startscene()
 
 
 func _on_transition_to_second_scene_body_entered(body):
@@ -25,9 +25,9 @@ func _on_transition_to_second_scene_body_exited(body):
 		global.transition_scenes = false
 
 
-func change_scene():
+func change_scene_in_startscene():
 	if global.transition_scenes == true:
-		if global.current_scene == "world":
-			get_tree().change_scene_to_file("res://scenes/secondscene.tscn")
+		if global.current_scene == "start_scene":
 			global.game_first_load = false
-			global.finish_changescenes("secondscene")
+			global.finish_changescenes("second_scene")
+			get_tree().change_scene_to_file("res://scenes/secondscene.tscn")

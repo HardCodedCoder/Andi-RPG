@@ -263,7 +263,7 @@ layer_2/tile_data = PackedInt32Array()
 position = Vector2(129, 108)
 
 [node name="enemy" parent="." instance=ExtResource("12_370lm")]
-position = Vector2(206, 171)
+position = Vector2(192, 167)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -275,7 +275,7 @@ polygon = PackedVector2Array(0, 0, 21, -23, 44, -36, 75, -42, 110, -45, 138, -43
 position = Vector2(257, 130)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="transition_to_second_scene"]
-position = Vector2(19.5, 14.5)
+position = Vector2(30, 12)
 shape = SubResource("RectangleShape2D_x53ug")
 
 [connection signal="body_entered" from="transition_to_second_scene" to="." method="_on_transition_to_second_scene_body_entered"]

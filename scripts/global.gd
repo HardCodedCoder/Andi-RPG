@@ -2,7 +2,7 @@ extends Node
 
 var player_current_attack = false
 
-var current_scene = "world" 
+var current_scene = "start_scene"
 var transition_scenes = false
 
 var player_exit_second_scene_posx = 243
@@ -35,4 +35,3 @@ func finish_changescenes(transitioned_to):
 	if transition_scenes == true:
 		transition_scenes = false
 		current_scene = transitioned_to
-	

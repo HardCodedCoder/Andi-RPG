@@ -384,7 +384,7 @@ shape = SubResource("RectangleShape2D_f6mk1")
 [node name="transition_to_third_scene" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="transition_to_third_scene"]
-position = Vector2(631, 89)
+position = Vector2(626, 90)
 shape = SubResource("RectangleShape2D_iom2h")
 
 [connection signal="body_entered" from="transition_to_startscene" to="." method="_on_transition_to_startscene_body_entered"]

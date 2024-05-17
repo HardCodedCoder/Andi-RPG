@@ -138,9 +138,75 @@ func _on_deal_attack_timer_timeout():
 	attack_ip = false
 	
 func current_camera():
-	if global.current_scene == "world":
+	if global.current_scene == "startscene":
 		$Startscene_camera.enabled = true
 		$secondscene_camera.enabled = false
-	elif global.current_scene == "secondscene":
+		$third_scene_camera.enabled = false
+		$scene_with_key_camera.enabled = false
+		$way_to_the_boss_camera.enabled = false
+		$end_one_camera.enabled = false
+		$end_two_camera.enabled = false
+		$bossroom_camera.enabled = false
+	elif global.current_scene == "second_scene":
 		$Startscene_camera.enabled = false
 		$secondscene_camera.enabled = true
+		$third_scene_camera.enabled = false
+		$scene_with_key_camera.enabled = false
+		$way_to_the_boss_camera.enabled = false
+		$end_one_camera.enabled = false
+		$end_two_camera.enabled = false
+		$bossroom_camera.enabled = false
+	elif global.current_scene == "third_scene":
+		$Startscene_camera.enabled = false
+		$secondscene_camera.enabled = false
+		$third_scene_camera.enabled = true
+		$scene_with_key_camera.enabled = false
+		$way_to_the_boss_camera.enabled = false
+		$end_one_camera.enabled = false
+		$end_two_camera.enabled = false
+		$bossroom_camera.enabled = false
+	elif global.current_scene == "scene_with_key":
+		$Startscene_camera.enabled = false
+		$secondscene_camera.enabled = false
+		$third_scene_camera.enabled = false
+		$scene_with_key_camera.enabled = true
+		$way_to_the_boss_camera.enabled = false
+		$end_one_camera.enabled = false
+		$end_two_camera.enabled = false
+		$bossroom_camera.enabled = false
+	elif global.current_scene == "way_to_the_boss":
+		$Startscene_camera.enabled = false
+		$secondscene_camera.enabled = false
+		$third_scene_camera.enabled = false
+		$scene_with_key_camera.enabled = false
+		$way_to_the_boss_camera.enabled = true
+		$end_one_camera.enabled = false
+		$end_two_camera.enabled = false
+		$bossroom_camera.enabled = false
+	elif global.current_scene == "end_one":
+		$Startscene_camera.enabled = false
+		$secondscene_camera.enabled = false
+		$third_scene_camera.enabled = false
+		$scene_with_key_camera.enabled = false
+		$way_to_the_boss_camera.enabled = false
+		$end_one_camera.enabled = true
+		$end_two_camera.enabled = false
+		$bossroom_camera.enabled = false
+	elif global.current_scene == "end_two":
+		$Startscene_camera.enabled = false
+		$secondscene_camera.enabled = false
+		$third_scene_camera.enabled = false
+		$scene_with_key_camera.enabled = false
+		$way_to_the_boss_camera.enabled = false
+		$end_one_camera.enabled = false
+		$end_two_camera.enabled = true
+		$bossroom_camera.enabled = false
+	elif global.current_scene == "boss_room":
+		$Startscene_camera.enabled = false
+		$secondscene_camera.enabled = false
+		$third_scene_camera.enabled = false
+		$scene_with_key_camera.enabled = false
+		$way_to_the_boss_camera.enabled = false
+		$end_one_camera.enabled = false
+		$end_two_camera.enabled = false
+		$bossroom_camera.enabled = true

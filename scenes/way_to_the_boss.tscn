@@ -381,7 +381,7 @@ sources/4 = SubResource("TileSetAtlasSource_wrq1k")
 sources/5 = SubResource("TileSetAtlasSource_827yw")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_evhqo"]
-size = Vector2(18.625, 16)
+size = Vector2(39.3125, 41.25)
 
 [node name="Node2D" type="Node2D"]
 
@@ -420,19 +420,19 @@ shape = SubResource("RectangleShape2D_evhqo")
 [node name="transition_to_end_two" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="transition_to_end_two"]
-position = Vector2(-18, 281.5)
+position = Vector2(-17, 282.375)
 shape = SubResource("RectangleShape2D_evhqo")
 
 [node name="transition_to_third_scene" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="transition_to_third_scene"]
-position = Vector2(391, 627)
+position = Vector2(393, 628)
 shape = SubResource("RectangleShape2D_evhqo")
 
 [node name="transition_to_bossroom" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="transition_to_bossroom"]
-position = Vector2(183.688, 187)
+position = Vector2(187, 172)
 shape = SubResource("RectangleShape2D_evhqo")
 
 [node name="player" parent="." instance=ExtResource("7_4s6c8")]
