@@ -496,19 +496,6 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 editor_draw_limits = true
 
-[node name="way_to_the_boss_camera" type="Camera2D" parent="."]
-position = Vector2(199, 56)
-zoom = Vector2(4, 4)
-limit_left = 125
-limit_top = 6
-limit_right = 655
-limit_bottom = 608
-limit_smoothed = true
-rotation_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-editor_draw_limits = true
-
 [node name="end_one_camera" type="Camera2D" parent="."]
 position = Vector2(123, 48)
 zoom = Vector2(4, 4)
@@ -537,11 +524,23 @@ editor_draw_limits = true
 
 [node name="bossroom_camera" type="Camera2D" parent="."]
 position = Vector2(150, 179)
-zoom = Vector2(4, 4)
 limit_left = 2
 limit_top = 5
 limit_right = 305
 limit_bottom = 237
+limit_smoothed = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+editor_draw_limits = true
+
+[node name="fourth_scene_camera" type="Camera2D" parent="."]
+position = Vector2(347, 524)
+zoom = Vector2(4, 4)
+limit_left = 8
+limit_top = 6
+limit_right = 655
+limit_bottom = 611
 limit_smoothed = true
 rotation_smoothing_enabled = true
 drag_horizontal_enabled = true

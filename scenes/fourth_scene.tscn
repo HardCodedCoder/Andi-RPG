@@ -1,21 +1,22 @@
-[gd_scene load_steps=16 format=3 uid="uid://cwuiqdch1drj4"]
+[gd_scene load_steps=20 format=3 uid="uid://cwuiqdch1drj4"]
 
-[ext_resource type="Texture2D" uid="uid://fwudka3pqm7m" path="res://art/tilesets/grass.png" id="1_dkirg"]
-[ext_resource type="Texture2D" uid="uid://dsmclbarflyvv" path="res://art/tilesets/plains.png" id="2_tvipm"]
-[ext_resource type="Texture2D" uid="uid://rewbdsmx1a27" path="res://art/objects/objects.png" id="3_0v4jf"]
-[ext_resource type="Texture2D" uid="uid://cve85x8palwul" path="res://art/tilesets/walls/walls.png" id="4_jmmds"]
-[ext_resource type="Texture2D" uid="uid://j8njmvvnsnyh" path="res://art/tilesets/walls/wooden_door_b.png" id="5_o5qa6"]
-[ext_resource type="Texture2D" uid="uid://dp6ejjleocr4p" path="res://art/tilesets/decor_16x16.png" id="6_kj2r4"]
-[ext_resource type="PackedScene" uid="uid://cil03ohrmiway" path="res://scenes/player.tscn" id="7_4s6c8"]
+[ext_resource type="Script" path="res://scripts/fourth_scene.gd" id="1_5sbm6"]
+[ext_resource type="Texture2D" uid="uid://fwudka3pqm7m" path="res://art/tilesets/grass.png" id="1_vwac7"]
+[ext_resource type="Texture2D" uid="uid://dsmclbarflyvv" path="res://art/tilesets/plains.png" id="2_qdigg"]
+[ext_resource type="Texture2D" uid="uid://rewbdsmx1a27" path="res://art/objects/objects.png" id="3_wfbp3"]
+[ext_resource type="Texture2D" uid="uid://cve85x8palwul" path="res://art/tilesets/walls/walls.png" id="4_csivi"]
+[ext_resource type="Texture2D" uid="uid://j8njmvvnsnyh" path="res://art/tilesets/walls/wooden_door_b.png" id="5_b0kmu"]
+[ext_resource type="Texture2D" uid="uid://dp6ejjleocr4p" path="res://art/tilesets/decor_16x16.png" id="6_dbqu3"]
+[ext_resource type="PackedScene" uid="uid://cil03ohrmiway" path="res://scenes/player.tscn" id="7_s7jay"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sbrw3"]
-texture = ExtResource("1_dkirg")
+texture = ExtResource("1_vwac7")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qbh07"]
-texture = ExtResource("2_tvipm")
+texture = ExtResource("2_qdigg")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -153,7 +154,7 @@ texture = ExtResource("2_tvipm")
 3:7/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_at351"]
-texture = ExtResource("3_0v4jf")
+texture = ExtResource("3_wfbp3")
 0:0/0 = 0
 0:0/0/y_sort_origin = 2
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -204,7 +205,7 @@ texture = ExtResource("3_0v4jf")
 10:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-11.3125, 2.5, 10.4375, 2.625, 10.6875, 4.75, 8.6875, 9.25, -6.0625, 9.25, -11.1875, 6.375)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6rkha"]
-texture = ExtResource("4_jmmds")
+texture = ExtResource("4_csivi")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -331,7 +332,7 @@ texture = ExtResource("4_jmmds")
 5:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.1875, 8, -8, 8, -8, -8, 0.3125, -8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wrq1k"]
-texture = ExtResource("5_o5qa6")
+texture = ExtResource("5_b0kmu")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -341,7 +342,7 @@ texture = ExtResource("5_o5qa6")
 1:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_827yw"]
-texture = ExtResource("6_kj2r4")
+texture = ExtResource("6_dbqu3")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -380,12 +381,22 @@ sources/3 = SubResource("TileSetAtlasSource_6rkha")
 sources/4 = SubResource("TileSetAtlasSource_wrq1k")
 sources/5 = SubResource("TileSetAtlasSource_827yw")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_evhqo"]
-size = Vector2(39.3125, 41.25)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ngjh"]
+size = Vector2(33, 45.75)
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ci8ll"]
+size = Vector2(66, 29)
 
-[node name="way_to_the_boss" type="TileMap" parent="."]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iebfv"]
+size = Vector2(53, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1gqqn"]
+size = Vector2(18, 17)
+
+[node name="fourth_scene" type="Node2D"]
+script = ExtResource("1_5sbm6")
+
+[node name="fourth_scene" type="TileMap" parent="."]
 y_sort_enabled = true
 position = Vector2(-511, 402)
 tile_set = SubResource("TileSet_tpf8k")
@@ -409,31 +420,40 @@ layer_5/tile_data = PackedInt32Array(786488, 196613, 4, 524345, 196613, 4, 72095
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(2, 2, 465, 0, 474, -50, 510, -47, 509, -1, 655, 5, 661, 605, 413, 609, 411, 631, 375, 636, 373, 612, 0, 611, -3, 304, -40, 300, -40, 261, 0, 262, 1, 6, -16, -16, -24, 61, -63, 137, -67, 205, -79, 350, -85, 503, -71, 635, 81, 694, 321, 695, 508, 681, 641, 646, 769, 575, 763, 492, 752, 328, 783, 78, 753, -9, 581, -93, 447, -108, 267, -96, 108, -59, 20, -19)
+polygon = PackedVector2Array(2, 2, 413, 2, 465, 2, 474, -50, 510, -47, 509, 2, 655, 5, 661, 605, 413, 609, 411, 631, 375, 636, 372, 610, 352, 610, 0, 611, 0, 338, -1, 304, -40, 300, -40, 261, 0, 262, 1, 6, -16, -16, -24, 61, -63, 137, -67, 205, -79, 350, -85, 503, -71, 635, 81, 694, 321, 695, 508, 681, 641, 646, 769, 575, 763, 492, 752, 328, 783, 78, 753, -9, 581, -93, 447, -108, 267, -96, 108, -59, 20, -19)
 
 [node name="transition_to_end_one" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="transition_to_end_one"]
-position = Vector2(489, -17)
-shape = SubResource("RectangleShape2D_evhqo")
+position = Vector2(-15, 283)
+shape = SubResource("RectangleShape2D_1ngjh")
 
 [node name="transition_to_end_two" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="transition_to_end_two"]
-position = Vector2(-17, 282.375)
-shape = SubResource("RectangleShape2D_evhqo")
+position = Vector2(486, -12.5)
+shape = SubResource("RectangleShape2D_ci8ll")
 
 [node name="transition_to_third_scene" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="transition_to_third_scene"]
-position = Vector2(393, 628)
-shape = SubResource("RectangleShape2D_evhqo")
+position = Vector2(393, 624)
+shape = SubResource("RectangleShape2D_iebfv")
 
-[node name="transition_to_bossroom" type="Area2D" parent="."]
+[node name="transition_to_boss_room" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="transition_to_bossroom"]
-position = Vector2(187, 172)
-shape = SubResource("RectangleShape2D_evhqo")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transition_to_boss_room"]
+position = Vector2(185, 186.5)
+shape = SubResource("RectangleShape2D_1gqqn")
 
-[node name="player" parent="." instance=ExtResource("7_4s6c8")]
+[node name="player" parent="." instance=ExtResource("7_s7jay")]
 position = Vector2(393, 600)
+
+[connection signal="body_entered" from="transition_to_end_one" to="." method="_on_transition_to_end_one_body_entered"]
+[connection signal="body_exited" from="transition_to_end_one" to="." method="_on_transition_to_end_one_body_exited"]
+[connection signal="body_entered" from="transition_to_end_two" to="." method="_on_transition_to_end_two_body_entered"]
+[connection signal="body_exited" from="transition_to_end_two" to="." method="_on_transition_to_end_two_body_exited"]
+[connection signal="body_entered" from="transition_to_third_scene" to="." method="_on_transition_to_third_scene_body_entered"]
+[connection signal="body_exited" from="transition_to_third_scene" to="." method="_on_transition_to_third_scene_body_exited"]
+[connection signal="body_entered" from="transition_to_boss_room" to="." method="_on_transition_to_boss_room_body_entered"]
+[connection signal="body_exited" from="transition_to_boss_room" to="." method="_on_transition_to_boss_room_body_exited"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://d4khcu2tw8u4o"]
+[gd_scene load_steps=15 format=3 uid="uid://d4khcu2tw8u4o"]
 
 [ext_resource type="Texture2D" uid="uid://fwudka3pqm7m" path="res://art/tilesets/grass.png" id="1_onvb3"]
+[ext_resource type="Script" path="res://scripts/scene_with_key.gd" id="1_qorlf"]
 [ext_resource type="Texture2D" uid="uid://dsmclbarflyvv" path="res://art/tilesets/plains.png" id="2_3nqj5"]
 [ext_resource type="Texture2D" uid="uid://cyb08mvge7wnm" path="res://art/tilesets/fences.png" id="3_0l03l"]
 [ext_resource type="Texture2D" uid="uid://rewbdsmx1a27" path="res://art/objects/objects.png" id="4_5r0fp"]
@@ -298,7 +299,8 @@ sources/4 = SubResource("TileSetAtlasSource_d47dx")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mh2fs"]
 size = Vector2(121, 48)
 
-[node name="Node2D" type="Node2D"]
+[node name="scene_with_key" type="Node2D"]
+script = ExtResource("1_qorlf")
 
 [node name="scene_with_key" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -330,3 +332,6 @@ shape = SubResource("RectangleShape2D_mh2fs")
 
 [node name="player" parent="." instance=ExtResource("6_nhncq")]
 position = Vector2(127, 20)
+
+[connection signal="body_entered" from="transition_to_third_scene" to="." method="_on_transition_to_third_scene_body_entered"]
+[connection signal="body_exited" from="transition_to_third_scene" to="." method="_on_transition_to_third_scene_body_exited"]

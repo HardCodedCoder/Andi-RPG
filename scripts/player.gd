@@ -143,7 +143,7 @@ func current_camera():
 		$secondscene_camera.enabled = false
 		$third_scene_camera.enabled = false
 		$scene_with_key_camera.enabled = false
-		$way_to_the_boss_camera.enabled = false
+		$fourth_scene_camera.enabled = false
 		$end_one_camera.enabled = false
 		$end_two_camera.enabled = false
 		$bossroom_camera.enabled = false
@@ -152,7 +152,7 @@ func current_camera():
 		$secondscene_camera.enabled = true
 		$third_scene_camera.enabled = false
 		$scene_with_key_camera.enabled = false
-		$way_to_the_boss_camera.enabled = false
+		$fourth_scene_camera.enabled = false
 		$end_one_camera.enabled = false
 		$end_two_camera.enabled = false
 		$bossroom_camera.enabled = false
@@ -161,7 +161,7 @@ func current_camera():
 		$secondscene_camera.enabled = false
 		$third_scene_camera.enabled = true
 		$scene_with_key_camera.enabled = false
-		$way_to_the_boss_camera.enabled = false
+		$fourth_scene_camera.enabled = false
 		$end_one_camera.enabled = false
 		$end_two_camera.enabled = false
 		$bossroom_camera.enabled = false
@@ -170,16 +170,16 @@ func current_camera():
 		$secondscene_camera.enabled = false
 		$third_scene_camera.enabled = false
 		$scene_with_key_camera.enabled = true
-		$way_to_the_boss_camera.enabled = false
+		$fourth_scene_camera.enabled = false
 		$end_one_camera.enabled = false
 		$end_two_camera.enabled = false
 		$bossroom_camera.enabled = false
-	elif global.current_scene == "way_to_the_boss":
+	elif global.current_scene == "fourth_scene":
 		$Startscene_camera.enabled = false
 		$secondscene_camera.enabled = false
 		$third_scene_camera.enabled = false
 		$scene_with_key_camera.enabled = false
-		$way_to_the_boss_camera.enabled = true
+		$fourth_scene_camera.enabled = true
 		$end_one_camera.enabled = false
 		$end_two_camera.enabled = false
 		$bossroom_camera.enabled = false
@@ -188,7 +188,7 @@ func current_camera():
 		$secondscene_camera.enabled = false
 		$third_scene_camera.enabled = false
 		$scene_with_key_camera.enabled = false
-		$way_to_the_boss_camera.enabled = false
+		$fourth_scene_camera.enabled = false
 		$end_one_camera.enabled = true
 		$end_two_camera.enabled = false
 		$bossroom_camera.enabled = false
@@ -197,7 +197,7 @@ func current_camera():
 		$secondscene_camera.enabled = false
 		$third_scene_camera.enabled = false
 		$scene_with_key_camera.enabled = false
-		$way_to_the_boss_camera.enabled = false
+		$fourth_scene_camera.enabled = false
 		$end_one_camera.enabled = false
 		$end_two_camera.enabled = true
 		$bossroom_camera.enabled = false
@@ -206,7 +206,7 @@ func current_camera():
 		$secondscene_camera.enabled = false
 		$third_scene_camera.enabled = false
 		$scene_with_key_camera.enabled = false
-		$way_to_the_boss_camera.enabled = false
+		$fourth_scene_camera.enabled = false
 		$end_one_camera.enabled = false
 		$end_two_camera.enabled = false
 		$bossroom_camera.enabled = true

@@ -1,15 +1,15 @@
 [gd_scene load_steps=16 format=3 uid="uid://u5h3tax0kfr5"]
 
-[ext_resource type="Script" path="res://scenes/secondscene.gd" id="1_s6c6b"]
-[ext_resource type="Texture2D" uid="uid://rewbdsmx1a27" path="res://art/objects/objects.png" id="1_vh8xq"]
-[ext_resource type="Texture2D" uid="uid://fwudka3pqm7m" path="res://art/tilesets/grass.png" id="2_24h8e"]
-[ext_resource type="Texture2D" uid="uid://dsmclbarflyvv" path="res://art/tilesets/plains.png" id="3_00jru"]
-[ext_resource type="Texture2D" uid="uid://cyb08mvge7wnm" path="res://art/tilesets/fences.png" id="4_0m6cb"]
-[ext_resource type="Texture2D" uid="uid://dp6ejjleocr4p" path="res://art/tilesets/decor_16x16.png" id="5_pdfjd"]
-[ext_resource type="PackedScene" uid="uid://cil03ohrmiway" path="res://scenes/player.tscn" id="6_4rbp0"]
+[ext_resource type="Script" path="res://scripts/second_scene.gd" id="1_0ne4j"]
+[ext_resource type="Texture2D" uid="uid://rewbdsmx1a27" path="res://art/objects/objects.png" id="2_frvcs"]
+[ext_resource type="Texture2D" uid="uid://fwudka3pqm7m" path="res://art/tilesets/grass.png" id="3_h2hus"]
+[ext_resource type="Texture2D" uid="uid://dsmclbarflyvv" path="res://art/tilesets/plains.png" id="4_p6ipf"]
+[ext_resource type="Texture2D" uid="uid://cyb08mvge7wnm" path="res://art/tilesets/fences.png" id="5_y51t5"]
+[ext_resource type="Texture2D" uid="uid://dp6ejjleocr4p" path="res://art/tilesets/decor_16x16.png" id="6_jj0tb"]
+[ext_resource type="PackedScene" uid="uid://cil03ohrmiway" path="res://scenes/player.tscn" id="7_tq2uw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6qe7q"]
-texture = ExtResource("1_vh8xq")
+texture = ExtResource("2_frvcs")
 0:1/0 = 0
 0:1/0/y_sort_origin = 4
 0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -61,13 +61,13 @@ texture = ExtResource("1_vh8xq")
 0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(7.9375, 16.125, 11.4375, 17.875, 11.3125, 21.875, 9.0625, 26, 4.3125, 25.625, 2.4375, 24.125, 1.3125, 20.875, 0.3125, 24, -1.5625, 25.875, -5.9375, 25.625, -7.3125, 22.875, -11.6875, 22.875, -10.9375, 17.625, -11.3125, 15.625, -8.9375, 12.875, 6.1875, 12.5, 7.5625, 14)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fyhj7"]
-texture = ExtResource("2_24h8e")
+texture = ExtResource("3_h2hus")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_je1h7"]
-texture = ExtResource("3_00jru")
+texture = ExtResource("4_p6ipf")
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
@@ -241,7 +241,7 @@ texture = ExtResource("3_00jru")
 0:9/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4x0pl"]
-texture = ExtResource("4_0m6cb")
+texture = ExtResource("5_y51t5")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -297,7 +297,7 @@ texture = ExtResource("4_0m6cb")
 3:3/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5lsiu"]
-texture = ExtResource("5_pdfjd")
+texture = ExtResource("6_jj0tb")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -341,10 +341,10 @@ size = Vector2(39, 47)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iom2h"]
 size = Vector2(44, 38)
 
-[node name="secondscene" type="Node2D"]
-script = ExtResource("1_s6c6b")
+[node name="second_scene" type="Node2D"]
+script = ExtResource("1_0ne4j")
 
-[node name="secondscene" type="TileMap" parent="."]
+[node name="second_scene" type="TileMap" parent="."]
 y_sort_enabled = true
 position = Vector2(1, 2)
 rotation = -0.000293966
@@ -372,7 +372,7 @@ position = Vector2(-5.96046e-08, -2.38419e-07)
 rotation = 0.000293966
 polygon = PackedVector2Array(5.96046e-08, 2.38419e-07, 47, 2.38419e-07, 608, 1, 609, 68, 651, 68, 655, 106, 610, 107, 611, 189, 89, 192, 4, 192, -2, 103, -52, 100, -58, 55, -6, 52, -1, 52, -1, 4, -29, 23, -67, 41, -70, 78, -73, 118, -48, 127, -28, 222, 55, 241, 162, 237, 414, 235, 643, 229, 657, 159, 679, 113, 683, 39, 650, 1, 616, -22, 551, -31, 319, -26, 247, -30, 170, -31, 131, -31, -3, -2, -1, 3)
 
-[node name="player" parent="." instance=ExtResource("6_4rbp0")]
+[node name="player" parent="." instance=ExtResource("7_tq2uw")]
 position = Vector2(18, 82)
 
 [node name="transition_to_startscene" type="Area2D" parent="."]

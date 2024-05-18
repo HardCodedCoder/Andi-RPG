@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://eloktwmkhj5w"]
+[gd_scene load_steps=17 format=3 uid="uid://eloktwmkhj5w"]
 
 [ext_resource type="Texture2D" uid="uid://rewbdsmx1a27" path="res://art/objects/objects.png" id="1_47rtn"]
+[ext_resource type="Script" path="res://scripts/third_scene.gd" id="1_570uc"]
 [ext_resource type="Texture2D" uid="uid://fwudka3pqm7m" path="res://art/tilesets/grass.png" id="2_8uu8b"]
 [ext_resource type="Texture2D" uid="uid://dsmclbarflyvv" path="res://art/tilesets/plains.png" id="3_n03xx"]
 [ext_resource type="Texture2D" uid="uid://cyb08mvge7wnm" path="res://art/tilesets/fences.png" id="4_dsv2p"]
@@ -303,7 +304,8 @@ size = Vector2(96, 50)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ijgdx"]
 size = Vector2(41, 25)
 
-[node name="Node2D" type="Node2D"]
+[node name="third_scene" type="Node2D"]
+script = ExtResource("1_570uc")
 
 [node name="third_scene" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -332,9 +334,9 @@ layer_5/tile_data = PackedInt32Array(393227, 5, 4, 393225, 131077, 4, 131073, 13
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(3, 3, 357, 3, 357, -23, 408, -21, 398, 2, 642, 3, 643, 275, 379, 275, 376, 326, 276, 324, 278, 274, 2, 276, 3, 50, -48, 49, -57, 49, -43, 16, 2, 9, 2, 4, -4, -48, -69, 28, -83, 50, -74, 64, -54, 76, -53, 237, -69, 364, 125, 387, 430, 386, 588, 352, 669, 326, 746, 134, 757, 3, 678, -38, 491, -43, 351, -49, 197, -37, 2, -40)
 
-[node name="transition_to_secondscene" type="Area2D" parent="."]
+[node name="transition_to_second_scene" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="transition_to_secondscene"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transition_to_second_scene"]
 position = Vector2(-20, 28.5)
 shape = SubResource("RectangleShape2D_hx11v")
 
@@ -344,11 +346,18 @@ shape = SubResource("RectangleShape2D_hx11v")
 position = Vector2(327, 299)
 shape = SubResource("RectangleShape2D_uruuh")
 
-[node name="tansition_to_way_to_the_boss" type="Area2D" parent="."]
+[node name="tansition_to_fourth_scene" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="tansition_to_way_to_the_boss"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tansition_to_fourth_scene"]
 position = Vector2(377.5, -8.5)
 shape = SubResource("RectangleShape2D_ijgdx")
 
 [node name="player" parent="." instance=ExtResource("6_0h82n")]
 position = Vector2(15, 46)
+
+[connection signal="body_entered" from="transition_to_second_scene" to="." method="_on_transition_to_second_scene_body_entered"]
+[connection signal="body_exited" from="transition_to_second_scene" to="." method="_on_transition_to_second_scene_body_exited"]
+[connection signal="body_entered" from="transition_to_scene_with_key" to="." method="_on_transition_to_scene_with_key_body_entered"]
+[connection signal="body_exited" from="transition_to_scene_with_key" to="." method="_on_transition_to_scene_with_key_body_exited"]
+[connection signal="body_entered" from="tansition_to_fourth_scene" to="." method="_on_tansition_to_fourth_scene_body_entered"]
+[connection signal="body_exited" from="tansition_to_fourth_scene" to="." method="_on_tansition_to_fourth_scene_body_exited"]

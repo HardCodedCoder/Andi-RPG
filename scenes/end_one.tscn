@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://5pv2sjgmw1ri"]
+[gd_scene load_steps=15 format=3 uid="uid://5pv2sjgmw1ri"]
 
+[ext_resource type="Script" path="res://scripts/end_one.gd" id="1_aixhy"]
 [ext_resource type="Texture2D" uid="uid://fwudka3pqm7m" path="res://art/tilesets/grass.png" id="1_g1bid"]
 [ext_resource type="Texture2D" uid="uid://dsmclbarflyvv" path="res://art/tilesets/plains.png" id="2_eoo1c"]
 [ext_resource type="Texture2D" uid="uid://cyb08mvge7wnm" path="res://art/tilesets/fences.png" id="3_8h74c"]
@@ -396,7 +397,8 @@ sources/4 = SubResource("TileSetAtlasSource_qcbyd")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m1xs2"]
 size = Vector2(35, 48)
 
-[node name="Node2D" type="Node2D"]
+[node name="end_one" type="Node2D"]
+script = ExtResource("1_aixhy")
 
 [node name="end_one" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -418,11 +420,14 @@ layer_3/tile_data = PackedInt32Array(-458727, 4, 4, -458722, 4, 4, -458721, 6554
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(7, 2, 173, -1, 176, 28, 214, 29, 216, 77, 175, 75, 176, 118, 1, 121, 3, 12, 3, 5, -1, -8, -13, -22, -27, 104, 6, 134, 103, 137, 214, 121, 282, 91, 268, 5, 244, -24, 159, -57, 95, -66, 21, -59, -6, -21, 4, -1)
 
-[node name="transition_to_way_to_the_boss" type="Area2D" parent="."]
+[node name="transition_to_fourth_scene" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="transition_to_way_to_the_boss"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transition_to_fourth_scene"]
 position = Vector2(191, 51)
 shape = SubResource("RectangleShape2D_m1xs2")
 
 [node name="player" parent="." instance=ExtResource("6_s2yaw")]
 position = Vector2(164, 58)
+
+[connection signal="body_entered" from="transition_to_fourth_scene" to="." method="_on_transition_to_fourth_scene_body_entered"]
+[connection signal="body_exited" from="transition_to_fourth_scene" to="." method="_on_transition_to_fourth_scene_body_exited"]

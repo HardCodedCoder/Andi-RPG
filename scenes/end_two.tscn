@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://f5xsi2ssp38a"]
+[gd_scene load_steps=13 format=3 uid="uid://f5xsi2ssp38a"]
 
+[ext_resource type="Script" path="res://scenes/end_two.gd" id="1_pc8lq"]
 [ext_resource type="Texture2D" uid="uid://rewbdsmx1a27" path="res://art/objects/objects.png" id="1_tqjri"]
 [ext_resource type="Texture2D" uid="uid://dsmclbarflyvv" path="res://art/tilesets/plains.png" id="2_swyav"]
 [ext_resource type="Texture2D" uid="uid://fwudka3pqm7m" path="res://art/tilesets/grass.png" id="3_82mcv"]
@@ -238,7 +239,8 @@ sources/3 = SubResource("TileSetAtlasSource_0qv07")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_flepc"]
 size = Vector2(39.5, 23)
 
-[node name="Node2D" type="Node2D"]
+[node name="end_two" type="Node2D"]
+script = ExtResource("1_pc8lq")
 
 [node name="end_two" type="TileMap" parent="."]
 position = Vector2(-897, 515)
@@ -262,11 +264,14 @@ layer_4/tile_data = PackedInt32Array(-1769411, 3, 4, -1638338, 3, 4, -1900481, 6
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(16, 3, 191, 2, 192, 130, 121, 132, 120, 157, 86, 154, 83, 131, 15, 131, 15, 5, -20, -11, 4, 154, 83, 193, 198, 170, 224, 108, 222, 46, 211, -17, 145, -37, 84, -34, 36, -26, -6, -20)
 
-[node name="transition_to_way_to_the_boss" type="Area2D" parent="."]
+[node name="transition_to_fourth_scene" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="transition_to_way_to_the_boss"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transition_to_fourth_scene"]
 position = Vector2(103.25, 140.5)
 shape = SubResource("RectangleShape2D_flepc")
 
 [node name="player" parent="." instance=ExtResource("5_kjl30")]
 position = Vector2(102, 124)
+
+[connection signal="body_entered" from="transition_to_fourth_scene" to="." method="_on_transition_to_fourth_scene_body_entered"]
+[connection signal="body_exited" from="transition_to_fourth_scene" to="." method="_on_transition_to_fourth_scene_body_exited"]
