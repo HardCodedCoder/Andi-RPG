@@ -18,6 +18,7 @@ func _physics_process(delta):
 	enemy_attack()
 	attack()
 	current_camera()
+	update_healt()
 	
 	if health <= 0:
 		player_alive = false #go back to menu or respawn
@@ -210,3 +211,25 @@ func current_camera():
 		$end_one_camera.enabled = false
 		$end_two_camera.enabled = false
 		$bossroom_camera.enabled = true
+
+func update_healt():
+	var healthbar = $healthbar
+	healthbar.value = health
+	
+	if health >= 100:
+		healthbar.visible = false
+	else:
+		healthbar.visible = true
+
+func _on_regin_timer_timeout():
+	if health < 100:
+		health = health +20
+		if health > 100: 
+			health = 100
+	if health <= 0:
+		health = 0
+
+
+
+
+
