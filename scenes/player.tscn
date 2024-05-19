@@ -445,7 +445,6 @@ shape = SubResource("CircleShape2D_28483")
 [node name="deal_attack_timer" type="Timer" parent="."]
 
 [node name="Startscene_camera" type="Camera2D" parent="."]
-visible = false
 position = Vector2(130, 131)
 zoom = Vector2(4, 4)
 limit_left = 17
@@ -459,7 +458,6 @@ drag_vertical_enabled = true
 editor_draw_limits = true
 
 [node name="secondscene_camera" type="Camera2D" parent="."]
-visible = false
 position = Vector2(43, 38)
 zoom = Vector2(4, 4)
 limit_left = 1
@@ -473,7 +471,6 @@ drag_vertical_enabled = true
 editor_draw_limits = true
 
 [node name="third_scene_camera" type="Camera2D" parent="."]
-visible = false
 position = Vector2(43, 38)
 zoom = Vector2(4, 4)
 limit_left = 3
@@ -487,7 +484,6 @@ drag_vertical_enabled = true
 editor_draw_limits = true
 
 [node name="scene_with_key_camera" type="Camera2D" parent="."]
-visible = false
 position = Vector2(43, 38)
 zoom = Vector2(4, 4)
 limit_left = 4
@@ -500,9 +496,22 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 editor_draw_limits = true
 
+[node name="way_to_the_boss_camera" type="Camera2D" parent="."]
+position = Vector2(199, 56)
+zoom = Vector2(4, 4)
+limit_left = 125
+limit_top = 6
+limit_right = 655
+limit_bottom = 608
+limit_smoothed = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+editor_draw_limits = true
+
 [node name="end_one_camera" type="Camera2D" parent="."]
-position = Vector2(99, 40)
-zoom = Vector2(5, 5)
+position = Vector2(123, 48)
+zoom = Vector2(4, 4)
 limit_left = 3
 limit_top = -21
 limit_right = 172
@@ -514,9 +523,8 @@ drag_vertical_enabled = true
 editor_draw_limits = true
 
 [node name="end_two_camera" type="Camera2D" parent="."]
-visible = false
 position = Vector2(131, 62)
-zoom = Vector2(6.5, 5)
+zoom = Vector2(4, 4)
 limit_left = 17
 limit_top = 4
 limit_right = 189
@@ -528,27 +536,12 @@ drag_vertical_enabled = true
 editor_draw_limits = true
 
 [node name="bossroom_camera" type="Camera2D" parent="."]
-visible = false
-position = Vector2(57, 42)
-zoom = Vector2(4, 3)
-limit_left = 10
-limit_top = 0
-limit_right = 305
-limit_bottom = 240
-limit_smoothed = true
-rotation_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-editor_draw_limits = true
-
-[node name="fourth_scene_camera" type="Camera2D" parent="."]
-visible = false
-position = Vector2(83, 54)
+position = Vector2(150, 179)
 zoom = Vector2(4, 4)
-limit_left = 8
-limit_top = 6
-limit_right = 655
-limit_bottom = 611
+limit_left = 2
+limit_top = 5
+limit_right = 305
+limit_bottom = 237
 limit_smoothed = true
 rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
