@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var game_over = preload("res://gameover/game_over.tscn") as PackedScene
+
 var enemy_inattack_range = false
 var enemy_attack_cooldown = true
 var health = 300
@@ -21,10 +23,11 @@ func _physics_process(delta):
 	update_health()
 	
 	if health <= 0:
-		player_alive = false #go back to menu or respawn
+		player_alive = false
 		health = 0
 		print ("player has been killed")
 		self.queue_free()
+		get_tree().change_scene_to_packed(game_over)
 	
 func player_movement(delta):
 	
