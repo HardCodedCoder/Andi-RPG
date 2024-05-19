@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var enemy_inattack_range = false
 var enemy_attack_cooldown = true
-var health = 100
+var health = 300
 var player_alive = true
 
 var attack_ip = false
@@ -103,6 +103,7 @@ func _on_player_hitbox_body_exited(body):
 func enemy_attack():
 	if enemy_inattack_range and enemy_attack_cooldown == true:
 		health = health - 20
+		$player_hurt.play()
 		enemy_attack_cooldown = false
 		$attack_cooldown.start()
 		print(health)
@@ -120,16 +121,20 @@ func attack():
 		if dir == "right":
 			$AnimatedSprite2D.flip_h = false
 			$AnimatedSprite2D.play("side_attack")
+			$weapon_sound.play()
 			$deal_attack_timer.start()
 		if dir == "left":
 			$AnimatedSprite2D.flip_h = true
 			$AnimatedSprite2D.play("side_attack")
+			$weapon_sound.play()
 			$deal_attack_timer.start()
 		if dir == "down":
 			$AnimatedSprite2D.play("front_attack")
+			$weapon_sound.play()
 			$deal_attack_timer.start()
 		if dir == "up":
 			$AnimatedSprite2D.play("back_attack")
+			$weapon_sound.play()
 			$deal_attack_timer.start()
 
 

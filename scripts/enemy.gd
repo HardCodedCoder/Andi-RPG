@@ -7,6 +7,7 @@ var player = null
 var health = 100
 var player_inattack_zone = false
 var can_take_damage = true
+@onready var death_sound = $death_sound as AudioStreamPlayer2D
 
 func _physics_process(delta):
 	deal_with_damage()
@@ -54,6 +55,10 @@ func deal_with_damage():
 			can_take_damage = false
 			print("slime health: ", health)
 			if health <= 0:
+				$AnimatedSprite2D.play("death")
+				death_sound.play()
+				
+				await death_sound.finished
 				self.queue_free()
 
 

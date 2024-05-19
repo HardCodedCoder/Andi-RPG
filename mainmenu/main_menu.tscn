@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://2noadbikimiy"]
+[gd_scene load_steps=7 format=3 uid="uid://2noadbikimiy"]
 
 [ext_resource type="Texture2D" uid="uid://dpx0pajpr7e08" path="res://art/backround/menu_backround.png" id="1_tna6q"]
 [ext_resource type="Script" path="res://mainmenu/main_menu.gd" id="1_vpxmv"]
+[ext_resource type="AudioStream" uid="uid://c7tf0qwongs8w" path="res://music/title_music.mp3" id="3_1exie"]
+[ext_resource type="AudioStream" uid="uid://dy8iw1pmdei25" path="res://music/start_game.mp3" id="4_s0sci"]
 
 [sub_resource type="SystemFont" id="SystemFont_kgwl7"]
 font_names = PackedStringArray("Impact")
@@ -88,3 +90,12 @@ layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_fxdgq")
 theme_override_font_sizes/font_size = 24
 text = "EXIT GAME"
+
+[node name="title_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1exie")
+volume_db = -16.37
+autoplay = true
+
+[node name="start_game" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_s0sci")
+pitch_scale = 0.61

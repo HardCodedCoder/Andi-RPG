@@ -1,7 +1,9 @@
-[gd_scene load_steps=57 format=3 uid="uid://cil03ohrmiway"]
+[gd_scene load_steps=59 format=3 uid="uid://cil03ohrmiway"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_p23rk"]
 [ext_resource type="Texture2D" uid="uid://cwl4euhqepiyk" path="res://art/character/player.png" id="2_6xyp5"]
+[ext_resource type="AudioStream" uid="uid://fp6sj40feao3" path="res://music/player_hurt.mp3" id="3_ha3yo"]
+[ext_resource type="AudioStream" uid="uid://2l2ik7i8470q" path="res://music/weapon_swing.mp3" id="3_tg02q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_shffe"]
 atlas = ExtResource("2_6xyp5")
@@ -445,7 +447,6 @@ shape = SubResource("CircleShape2D_28483")
 [node name="deal_attack_timer" type="Timer" parent="."]
 
 [node name="Startscene_camera" type="Camera2D" parent="."]
-visible = false
 position = Vector2(130, 131)
 zoom = Vector2(4, 4)
 limit_left = 17
@@ -459,7 +460,6 @@ drag_vertical_enabled = true
 editor_draw_limits = true
 
 [node name="secondscene_camera" type="Camera2D" parent="."]
-visible = false
 position = Vector2(43, 38)
 zoom = Vector2(4, 4)
 limit_left = 1
@@ -473,7 +473,6 @@ drag_vertical_enabled = true
 editor_draw_limits = true
 
 [node name="third_scene_camera" type="Camera2D" parent="."]
-visible = false
 position = Vector2(43, 38)
 zoom = Vector2(4, 4)
 limit_left = 3
@@ -487,7 +486,6 @@ drag_vertical_enabled = true
 editor_draw_limits = true
 
 [node name="scene_with_key_camera" type="Camera2D" parent="."]
-visible = false
 position = Vector2(43, 38)
 zoom = Vector2(4, 4)
 limit_left = 4
@@ -514,7 +512,6 @@ drag_vertical_enabled = true
 editor_draw_limits = true
 
 [node name="end_two_camera" type="Camera2D" parent="."]
-visible = false
 position = Vector2(131, 62)
 zoom = Vector2(6.5, 5)
 limit_left = 17
@@ -528,7 +525,6 @@ drag_vertical_enabled = true
 editor_draw_limits = true
 
 [node name="bossroom_camera" type="Camera2D" parent="."]
-visible = false
 position = Vector2(57, 42)
 zoom = Vector2(4, 3)
 limit_left = 10
@@ -542,7 +538,6 @@ drag_vertical_enabled = true
 editor_draw_limits = true
 
 [node name="fourth_scene_camera" type="Camera2D" parent="."]
-visible = false
 position = Vector2(83, 54)
 zoom = Vector2(4, 4)
 limit_left = 8
@@ -567,6 +562,14 @@ show_percentage = false
 [node name="regin_timer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
+
+[node name="player_hurt" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ha3yo")
+volume_db = -6.118
+
+[node name="weapon_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_tg02q")
+volume_db = -12.0
 
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]

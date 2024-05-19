@@ -8,6 +8,8 @@ func _ready():
 	else:
 		$player.position.x = global.player_exit_second_scene_posx
 		$player.position.y = global.player_exit_second_scene_posy
+	
+	BackgroundMusic.play_music_level()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
