@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cwuiqdch1drj4"]
+[gd_scene load_steps=21 format=3 uid="uid://cwuiqdch1drj4"]
 
 [ext_resource type="Script" path="res://scripts/fourth_scene.gd" id="1_5sbm6"]
 [ext_resource type="Texture2D" uid="uid://fwudka3pqm7m" path="res://art/tilesets/grass.png" id="1_vwac7"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://j8njmvvnsnyh" path="res://art/tilesets/walls/wooden_door_b.png" id="5_b0kmu"]
 [ext_resource type="Texture2D" uid="uid://dp6ejjleocr4p" path="res://art/tilesets/decor_16x16.png" id="6_dbqu3"]
 [ext_resource type="PackedScene" uid="uid://cil03ohrmiway" path="res://scenes/player.tscn" id="7_s7jay"]
+[ext_resource type="PackedScene" uid="uid://cvbshecdnqjoa" path="res://scenes/enemy.tscn" id="9_pqfjs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sbrw3"]
 texture = ExtResource("1_vwac7")
@@ -448,6 +449,15 @@ shape = SubResource("RectangleShape2D_1gqqn")
 
 [node name="player" parent="." instance=ExtResource("7_s7jay")]
 position = Vector2(393, 600)
+
+[node name="enemy" parent="." instance=ExtResource("9_pqfjs")]
+position = Vector2(201, 287)
+
+[node name="enemy2" parent="." instance=ExtResource("9_pqfjs")]
+position = Vector2(392, 409)
+
+[node name="enemy3" parent="." instance=ExtResource("9_pqfjs")]
+position = Vector2(428, 71)
 
 [connection signal="body_entered" from="transition_to_end_one" to="." method="_on_transition_to_end_one_body_entered"]
 [connection signal="body_exited" from="transition_to_end_one" to="." method="_on_transition_to_end_one_body_exited"]

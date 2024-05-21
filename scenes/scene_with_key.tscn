@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d4khcu2tw8u4o"]
+[gd_scene load_steps=16 format=3 uid="uid://d4khcu2tw8u4o"]
 
 [ext_resource type="Texture2D" uid="uid://fwudka3pqm7m" path="res://art/tilesets/grass.png" id="1_onvb3"]
 [ext_resource type="Script" path="res://scripts/scene_with_key.gd" id="1_qorlf"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://rewbdsmx1a27" path="res://art/objects/objects.png" id="4_5r0fp"]
 [ext_resource type="Texture2D" uid="uid://dp6ejjleocr4p" path="res://art/tilesets/decor_16x16.png" id="5_3m3hi"]
 [ext_resource type="PackedScene" uid="uid://cil03ohrmiway" path="res://scenes/player.tscn" id="6_nhncq"]
+[ext_resource type="PackedScene" uid="uid://cvbshecdnqjoa" path="res://scenes/enemy.tscn" id="8_6wbld"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bo8jt"]
 texture = ExtResource("1_onvb3")
@@ -332,6 +333,9 @@ shape = SubResource("RectangleShape2D_mh2fs")
 
 [node name="player" parent="." instance=ExtResource("6_nhncq")]
 position = Vector2(127, 20)
+
+[node name="enemy" parent="." instance=ExtResource("8_6wbld")]
+position = Vector2(129, 84)
 
 [connection signal="body_entered" from="transition_to_third_scene" to="." method="_on_transition_to_third_scene_body_entered"]
 [connection signal="body_exited" from="transition_to_third_scene" to="." method="_on_transition_to_third_scene_body_exited"]
