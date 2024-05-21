@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://eloktwmkhj5w"]
+[gd_scene load_steps=19 format=3 uid="uid://eloktwmkhj5w"]
 
 [ext_resource type="Texture2D" uid="uid://rewbdsmx1a27" path="res://art/objects/objects.png" id="1_47rtn"]
 [ext_resource type="Script" path="res://scripts/third_scene.gd" id="1_570uc"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dp6ejjleocr4p" path="res://art/tilesets/decor_16x16.png" id="5_fnfco"]
 [ext_resource type="PackedScene" uid="uid://cil03ohrmiway" path="res://scenes/player.tscn" id="6_0h82n"]
 [ext_resource type="PackedScene" uid="uid://cvbshecdnqjoa" path="res://scenes/enemy.tscn" id="8_jm0j7"]
+[ext_resource type="PackedScene" uid="uid://c5gxypmvougyb" path="res://items/gains.tscn" id="9_rjsmh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tid4i"]
 texture = ExtResource("1_47rtn")
@@ -361,6 +362,9 @@ position = Vector2(156, 106)
 
 [node name="enemy2" parent="." instance=ExtResource("8_jm0j7")]
 position = Vector2(540, 218)
+
+[node name="Gains" parent="." instance=ExtResource("9_rjsmh")]
+position = Vector2(344, 170)
 
 [connection signal="body_entered" from="transition_to_second_scene" to="." method="_on_transition_to_second_scene_body_entered"]
 [connection signal="body_exited" from="transition_to_second_scene" to="." method="_on_transition_to_second_scene_body_exited"]

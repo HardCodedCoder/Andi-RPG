@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5gxypmvougyb"]
+
+[ext_resource type="Script" path="res://items/gains.gd" id="1_4m1hg"]
+[ext_resource type="Texture2D" uid="uid://c35vfqftvby7m" path="res://art/objects/weight_gainer.png" id="2_6m261"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcydc"]
+atlas = ExtResource("2_6m261")
+region = Rect2(0, 0, 771, 977)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j083g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcydc")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p5ml6"]
+radius = 34.0147
+
+[node name="Gains" type="Area2D"]
+script = ExtResource("1_4m1hg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.025, 0.025)
+sprite_frames = SubResource("SpriteFrames_j083g")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_p5ml6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
