@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ctk4xkhgo5vmo"]
+[gd_scene load_steps=18 format=3 uid="uid://ctk4xkhgo5vmo"]
 
 [ext_resource type="Script" path="res://scripts/boss_room.gd" id="1_7yu0a"]
 [ext_resource type="Texture2D" uid="uid://dol3whcwrtqe5" path="res://art/objects/chest_01.png" id="1_oqn6q"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bdtfivg7nc5me" path="res://art/tilesets/floors/carpet.png" id="5_502wn"]
 [ext_resource type="Texture2D" uid="uid://rewbdsmx1a27" path="res://art/objects/objects.png" id="6_4nv41"]
 [ext_resource type="PackedScene" uid="uid://cil03ohrmiway" path="res://scenes/player.tscn" id="7_y1s1i"]
+[ext_resource type="PackedScene" uid="uid://bcrds733ac2by" path="res://endboss/endboss.tscn" id="9_sqkbl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oox0g"]
 texture = ExtResource("1_oqn6q")
@@ -956,6 +957,9 @@ shape = SubResource("RectangleShape2D_rweus")
 
 [node name="player" parent="." instance=ExtResource("7_y1s1i")]
 position = Vector2(162, 231)
+
+[node name="endboss" parent="." instance=ExtResource("9_sqkbl")]
+position = Vector2(163, 140)
 
 [connection signal="body_entered" from="transition_to_fourth_scene" to="." method="_on_transition_to_fourth_scene_body_entered"]
 [connection signal="body_exited" from="transition_to_fourth_scene" to="." method="_on_transition_to_fourth_scene_body_exited"]
