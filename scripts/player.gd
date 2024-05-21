@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 var enemy_inattack_range = false
 var enemy_attack_cooldown = true
-var health = 300
+var health = 100
 var player_alive = true
 
 var attack_ip = false
@@ -105,7 +105,7 @@ func _on_player_hitbox_body_exited(body):
 
 func enemy_attack():
 	if enemy_inattack_range and enemy_attack_cooldown == true:
-		health = health - 20
+		health = health - 5
 		$player_hurt.play()
 		enemy_attack_cooldown = false
 		$attack_cooldown.start()

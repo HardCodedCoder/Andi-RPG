@@ -9,6 +9,8 @@ var player_inattack_zone = false
 var can_take_damage = true
 @onready var death_sound = $death_sound as AudioStreamPlayer2D
 
+@onready var victory = preload("res://gamevictory/game_victory.tscn") as PackedScene
+
 func _physics_process(delta):
 	deal_with_damage()
 	update_health()
@@ -57,10 +59,9 @@ func deal_with_damage():
 			if health <= 0:
 				$AnimatedSprite2D.play("death")
 				death_sound.play()
-				
 				await death_sound.finished
 				self.queue_free()
-
+				get_tree().change_scene_to_packed(victory)
 
 func _on_take_damage_cooldown_timeout():
 	can_take_damage = true
