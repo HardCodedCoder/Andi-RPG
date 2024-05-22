@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var game_over = preload("res://gameover/game_over.tscn") as PackedScene
-@onready var powerup_timer = $powerup_timer  # Stellen Sie sicher, dass der Name korrekt ist
+@onready var powerup_timer = $powerup_timer 
 
 var enemy_inattack_range = false
 var enemy_attack_cooldown = true
@@ -105,9 +105,9 @@ func _on_player_hitbox_body_exited(body):
 func enemy_attack():
 	if enemy_inattack_range and enemy_attack_cooldown == true:
 		if is_pumped == true:
-			health = health - 2
-		else:
 			health = health - 5
+		else:
+			health = health - 40
 		$player_hurt.play()
 		enemy_attack_cooldown = false
 		$attack_cooldown.start()
@@ -231,7 +231,7 @@ func update_health():
 
 func _on_regin_timer_timeout():
 	if health < 100:
-		health = health + 20
+		health = health + 10
 		if health > 100:
 			health = 100
 	if health <= 0:
